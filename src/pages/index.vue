@@ -10,7 +10,8 @@
                                 <ul v-for="(item,i) in menuList" v-bind:key="i">
                                     <li v-for="(sub,j) in item" v-bind:key="j">
                                         <a v-bind:href="sub?'/#/product/'+sub.id:''">
-                                            <img v-bind:src="sub?sub.img:'http://mi.futurefe.com/imgs/item-box-1.png'" alt="">
+                                            <img v-bind:src="sub?sub.img:'http://www.lnzz.site/mi-mall/imgs/item-box-1.png'"
+                                                 alt="">
                                             {{sub?sub.name:'小米9'}}
                                         </a>
                                     </li>
@@ -42,7 +43,7 @@
                 </div>
                 <swiper v-bind:options="swiperOption">
                     <swiper-slide v-for="(item,index) in slideList" v-bind:key="index">
-                        <a v-bind:href="'/#/product/'+item.id"><img v-bind:src="item.img"/></a>
+                        <a v-bind:href="'/#/product/'+item.id"><img v-bind:src="item.img"></a>
                     </swiper-slide>
                     <!-- Optional controls -->
                     <div class="swiper-pagination" slot="pagination"></div>
@@ -50,19 +51,58 @@
                     <div class="swiper-button-next" slot="button-next"></div>
                 </swiper>
             </div>
-            <div class="ads-box"></div>
-            <div class="banner"></div>
-            <div class="product-box"></div>
+            <div class="banner">
+                <a href="/#/product/30">
+                    <img v-lazy="'http://www.lnzz.site/mi-mall/imgs/banner-1.png'" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="container">
+                <h2>手机</h2>
+                <div class="wrapper">
+                    <div class="banner-left">
+                        <a href="/#/product/35"><img src="http://www.lnzz.site/mi-mall/imgs/mix-alpha.jpg" alt=""></a>
+                    </div>
+                    <div class="list-box">
+                        <div class="list" v-for="(arr,i) in phoneList" v-bind:key="i">
+                            <div class="item" v-for="(item,j) in arr" v-bind:key="j">
+                                <span v-bind:class="{'new-pro':j%2==0}">新品</span>
+                                <div class="item-img">
+                                    <img v-lazy="item.mainImage" alt="">
+                                </div>
+                                <div class="item-info">
+                                    <h3>{{item.name}}</h3>
+                                    <p>{{item.subtitle}}</p>
+                                    <p class="price" @click="addCart(item.id)">{{item.price}}元</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <service-bar></service-bar>
+        <modal
+                title="提示"
+                sureText="查看购物车"
+                btnType="1"
+                modalType="middle"
+                v-bind:showModal="showModal"
+                v-on:submit="goToCart"
+                v-on:cancel="showModal=false"
+        >
+            <template v-slot:body>
+                <p>商品添加成功！</p>
+            </template>
+        </modal>
     </div>
 </template>
-
 <script>
-    // import Modal from './../components/Modal'
-    import ServiceBar from "../components/service-bar"
-    import 'swiper/dist/css/swiper.css'
+    import ServiceBar from './../components/service-bar'
+    import Modal from './../components/modal'
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
+    import 'swiper/dist/css/swiper.css'
 
     export default {
         name: 'index',
@@ -70,7 +110,7 @@
             swiper,
             swiperSlide,
             ServiceBar,
-            // Modal
+            Modal
         },
         data() {
             return {
@@ -94,48 +134,83 @@
                 slideList: [
                     {
                         id: '42',
-                        img: 'http://mi.futurefe.com/imgs/slider/slide-1.jpg'
+                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-1.jpg'
                     },
                     {
                         id: '45',
-                        img: 'http://mi.futurefe.com/imgs/slider/slide-2.jpg'
+                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-2.jpg'
                     },
                     {
                         id: '46',
-                        img: 'http://mi.futurefe.com/imgs/slider/slide-3.jpg'
+                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-3.jpg'
                     },
                     {
                         id: '',
-                        img: 'http://mi.futurefe.com/imgs/slider/slide-4.jpg'
+                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-4.jpg'
+                    },
+                    {
+                        id: '',
+                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-1.jpg'
                     }
                 ],
                 menuList: [
                     [
                         {
                             id: 30,
-                            img: 'http://mi.futurefe.com/imgs/item-box-1.png',
+                            img: 'http://www.lnzz.site/mi-mall/imgs/item-box-1.png',
                             name: '小米CC9',
                         }, {
                         id: 31,
-                        img: 'http://mi.futurefe.com/imgs/item-box-2.png',
+                        img: 'http://www.lnzz.site/mi-mall/imgs/item-box-2.png',
                         name: '小米8青春版',
                     }, {
                         id: 32,
-                        img: 'http://mi.futurefe.com/imgs/item-box-3.jpg',
+                        img: 'http://www.lnzz.site/mi-mall/imgs/item-box-3.jpg',
                         name: 'Redmi K20 Pro',
                     }, {
                         id: 33,
-                        img: 'http://mi.futurefe.com/imgs/item-box-4.jpg',
+                        img: 'http://www.lnzz.site/mi-mall/imgs/item-box-4.jpg',
                         name: '移动4G专区',
                     }
                     ],
                     [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]
-                ]
+                ],
+                phoneList: [],
+                showModal: false
+            }
+        },
+        mounted() {
+            this.init();
+        },
+        methods: {
+            init() {
+                this.axios.get('/product/products', {
+                    params: {
+                        categoryId: 100012,
+                        pageSize: 14
+                    }
+                }).then((res) => {
+                    res.list = res.list.slice(6, 14);
+                    this.phoneList = [res.list.slice(0, 4), res.list.slice(4, 8)];
+                })
+            },
+            addCart(id) {
+                this.axios.post('/cart/add', {
+                    productId: id,
+                    selected: true
+                }).then((res) => {
+                    this.showModal = true;
+                    this.$store.dispatch('saveCartCount', res.cartTotalQuantity);
+                }).catch(() => {
+                    this.showModal = true;
+                });
+            },
+            goToCart() {
+                this.$router.push('/cart');
             }
         }
     }
 </script>
-
 <style lang="scss">
     @import './../assets/scss/config.scss';
     @import './../assets/scss/mixin.scss';
@@ -168,7 +243,7 @@
                                 right: 30px;
                                 top: 17.5px;
                                 content: ' ';
-                                @include bgImg(10px, 15px, '../../static/imgs/icon-arrow.png');
+                                @include bgImg(10px, 15px, 'http://www.lnzz.site/mi-mall/imgs/icon-arrow.png');
                             }
                         }
 
@@ -230,17 +305,6 @@
                     width: 100%;
                     height: 100%;
                 }
-            }
-        }
-
-        .ads-box {
-            @include flex();
-            margin-top: 14px;
-            margin-bottom: 31px;
-
-            a {
-                width: 296px;
-                height: 167px;
             }
         }
 
@@ -333,7 +397,7 @@
                                     cursor: pointer;
 
                                     &:after {
-                                        @include bgImg(22px, 22px, '../../static/imgs/icon-cart-hover.png');
+                                        @include bgImg(22px, 22px, 'http://www.lnzz.site/mi-mall/imgs/icon-cart-hover.png');
                                         content: ' ';
                                         margin-left: 5px;
                                         vertical-align: middle;
