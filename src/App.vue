@@ -13,17 +13,19 @@
             return {}
         },
         mounted() {
-            this.getUser();
-            this.getCartCount();
+            if (this.$cookie.get('userId')) {
+                this.getUser();
+                this.getCartCount();
+            }
         },
         methods: {
             getUser() {
-                this.axios.get('/user/userInfo').then((res) => {
+                this.axios.get('/user/userInfo').then((res = {}) => {
                     this.$store.dispatch('saveUserName', res.username);
                 });
             },
             getCartCount() {
-                this.axios.get('/cart/products/sum').then((res) => {
+                this.axios.get('/cart/products/sum').then((res = 0) => {
                     this.$store.dispatch('saveCartCount', res);
                 });
             }

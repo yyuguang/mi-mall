@@ -1,11 +1,13 @@
 import Vue from 'vue'
-import App from './App.vue'
+import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
-import VueLazyload from 'vue-lazyload'
-import router from './router'
+import {Message} from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import store from './store'
+import App from './App.vue'
 
 
 /**
@@ -28,16 +30,22 @@ axios.interceptors.response.use(function (response) {
             window.location.href = '/#/login';
         }
     } else {
-        alert(res.msg);
+        Message.warning(res.msg);
         return Promise.reject(res);
     }
+}, (error) => {
+    let res = error.response;
+    Message.error(res.data.message);
+    return Promise.reject(error);
 });
 
 Vue.use(VueAxios, axios);
 Vue.use(VueCookie);
-Vue.use(VueLazyload, {
-    loading: '../static/imgs/loading-svg/loading-bars.svg'
+Vue.use(VueLazyLoad, {
+    loading: 'http://www.lnzz.site/mi-mall/imgs/loading-svg/loading-bars.svg'
 });
+
+Vue.prototype.$message = Message;
 Vue.config.productionTip = false;
 
 new Vue({
@@ -45,3 +53,4 @@ new Vue({
     router,
     render: h => h(App),
 }).$mount('#app');
+
