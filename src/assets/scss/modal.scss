@@ -34,7 +34,7 @@
       font-size: $fontI;
 
       .icon-close {
-        @include positionImg(absolute, 23px, 25px, 14px, 14px, 'http://www.lnzz.site/mi-mall/imgs/icon-close.png');
+        @include positionImg(absolute, 23px, 25px, 14px, 14px, '../../static/imgs/icon-close.png');
         transition: transform .3s;
 
         &:hover {

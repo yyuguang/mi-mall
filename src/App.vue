@@ -13,11 +13,26 @@
             return {}
         },
         mounted() {
+            this.getUser();
+            this.getCartCount();
+        },
+        methods: {
+            getUser() {
+                this.axios.get('/user/userInfo').then((res) => {
+                    this.$store.dispatch('saveUserName', res.username);
+                });
+            },
+            getCartCount() {
+                this.axios.get('/cart/products/sum').then((res) => {
+                    this.$store.dispatch('saveCartCount', res);
+                });
+            }
         }
     }
 </script>
 
-<style>
-   @import './assets/scss/reset.scss';
-   @import './assets/scss/modal.scss';
+<style lang="scss">
+    @import './assets/scss/reset.scss';
+    @import './assets/scss/config.scss';
+    @import './assets/scss/button.scss';
 </style>

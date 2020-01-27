@@ -9,7 +9,7 @@
             <a href="https://github.com/yyuguang" target="_blank">GitHub</a><span>|</span>
             <a href="https://blog.csdn.net/weixin_41110459" target="_blank">CSDN主页</a><span>|</span>
         </div>
-        <div class="copyright">Copyright © 2018 - 2020 lnzz Designed by lnzz</div>
+        <div class="copyright">Copyright © 2018 - 2020 lnzz Designed by lnzz.</div>
     </div>
 </template>
 

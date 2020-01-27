@@ -14,7 +14,7 @@
                     <a href="javascript:;" v-if="!username">注册</a>
                     <a href="javascript:;" v-if="username">退出</a>
                     <a href="javascript:;" v-if="username">我的订单</a>
-                    <a href="javascript:;" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车</a>
+                    <a href="javascript:;" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车({{cartCount}})</a>
                 </div>
             </div>
         </div>
@@ -121,8 +121,15 @@
         name: 'nav-header',
         data() {
             return {
-                username: 'jack',
                 phoneList: []
+            }
+        },
+        computed: {
+            username() {
+                return this.$store.state.username;
+            },
+            cartCount() {
+                return this.$store.state.cartCount;
             }
         },
         filters: {
