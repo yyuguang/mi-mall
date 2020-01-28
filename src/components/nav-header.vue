@@ -140,6 +140,10 @@
         },
         mounted() {
             this.getProductList();
+            let params = this.$route.params;
+            if (params && params.from === 'login') {
+                this.getCartCount();
+            }
         },
         methods: {
             login() {
@@ -154,6 +158,11 @@
                 }).then((res) => {
                     this.phoneList = res.list;
                 })
+            },
+            getCartCount() {
+                this.axios.get('/cart/products/sum').then((res = 0) => {
+                    this.$store.dispatch('saveCartCount', res);
+                });
             },
             logout() {
                 this.axios.post('/user/logout').then(() => {
