@@ -1,18 +1,27 @@
 <template>
     <div>
-        <nav-header></nav-header>
         <router-view></router-view>
+        <service-bar></service-bar>
         <nav-footer></nav-footer>
     </div>
 </template>
 
 <script>
-    import NavHeader from "../components/nav-header";
     import NavFooter from "../components/nav-footer";
+    import ServiceBar from "../components/service-bar";
 
     export default {
         name: "order",
-        components: {NavFooter, NavHeader}
+        components: {
+            ServiceBar,
+            NavFooter
+        },
+        data() {
+            return {
+                title: '',
+                tip: ''
+            }
+        }
     }
 </script>
 
