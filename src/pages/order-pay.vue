@@ -178,7 +178,7 @@
                         width: 90px;
                         height: 90px;
                         border-radius: 50%;
-                        background: url('../../static/imgs/icon-gou.png') #80c58a no-repeat center;
+                        background: url('/imgs/icon-gou.png') #80c58a no-repeat center;
                         background-size: 60px;
                         margin-right: 40px;
                     }
@@ -215,7 +215,7 @@
                             display: inline-block;
                             width: 14px;
                             height: 10px;
-                            background: url('../../static/imgs/icon-down.png') no-repeat center;
+                            background: url('/imgs/icon-down.png') no-repeat center;
                             background-size: contain;
                             margin-left: 9px;
                             transition: all .5s;
@@ -293,13 +293,13 @@
                     }
 
                     .pay-ali {
-                        background: url('../../static/imgs/pay/icon-ali.png') no-repeat center;
+                        background: url('/imgs/pay/icon-ali.png') no-repeat center;
                         background-size: 103px 38px;
                         margin-top: 19px;
                     }
 
                     .pay-wechat {
-                        background: url('../../static/imgs/pay/icon-wechat.png') no-repeat center;
+                        background: url('/imgs/pay/icon-wechat.png') no-repeat center;
                         background-size: 103px 38px;
                     }
                 }

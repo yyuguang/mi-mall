@@ -26,11 +26,11 @@
             <div class="item-bg-3"></div>
             <div class="item-swiper">
                 <swiper :options="swiperOption">
-                    <swiper-slide><img src="../../static/imgs/product/gallery-2.png" alt=""></swiper-slide>
-                    <swiper-slide><img src="../../static/imgs/product/gallery-3.png" alt=""></swiper-slide>
-                    <swiper-slide><img src="../../static/imgs/product/gallery-4.png" alt=""></swiper-slide>
-                    <swiper-slide><img src="../../static/imgs/product/gallery-5.jpg" alt=""></swiper-slide>
-                    <swiper-slide><img src="../../static/imgs/product/gallery-6.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="/imgs/product/gallery-2.png" alt=""></swiper-slide>
+                    <swiper-slide><img src="/imgs/product/gallery-3.png" alt=""></swiper-slide>
+                    <swiper-slide><img src="/imgs/product/gallery-4.png" alt=""></swiper-slide>
+                    <swiper-slide><img src="/imgs/product/gallery-5.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="/imgs/product/gallery-6.jpg" alt=""></swiper-slide>
                     <!-- Optional controls -->
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
@@ -44,7 +44,7 @@
                     <div class="overlay"></div>
                     <div class="video" v-bind:class="showSlide">
                         <span class="icon-close" @click="closeVideo"></span>
-                        <video src="../../static/imgs/product/video.mp4" muted autoplay controls="controls"></video>
+                        <video src="/imgs/product/video.mp4" muted autoplay controls="controls"></video>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
 
         .content {
             .item-bg {
-                background: url('../../static/imgs/product/product-bg-1.png') no-repeat center;
+                background: url('/imgs/product/product-bg-1.png') no-repeat center;
                 height: 718px;
                 text-align: center;
 
@@ -153,13 +153,13 @@
             }
 
             .item-bg-2 {
-                background: url('../../static/imgs/product/product-bg-2.png') no-repeat center;
+                background: url('/imgs/product/product-bg-2.png') no-repeat center;
                 height: 480px;
                 background-size: 1226px 397px;
             }
 
             .item-bg-3 {
-                background: url('../../static/imgs/product/product-bg-3.png') no-repeat center;
+                background: url('/imgs/product/product-bg-3.png') no-repeat center;
                 height: 638px;
                 background-size: cover;
             }
@@ -197,7 +197,7 @@
                 }
 
                 .video-bg {
-                    background: url('../../static/imgs/product/gallery-1.png') no-repeat center;
+                    background: url('/imgs/product/gallery-1.png') no-repeat center;
                     background-size: cover;
                     width: 1226px;
                     height: 540px;
@@ -257,7 +257,7 @@
                             position: absolute;
                             top: 20px;
                             right: 20px;
-                            @include bgImg(20px, 20px, '../../static/imgs/icon-close.png');
+                            @include bgImg(20px, 20px, '/imgs/icon-close.png');
                             cursor: pointer;
                             z-index: 11;
                         }

@@ -42,7 +42,7 @@ axios.interceptors.response.use(function (response) {
 Vue.use(VueAxios, axios);
 Vue.use(VueCookie);
 Vue.use(VueLazyLoad, {
-    loading: 'http://www.lnzz.site/mi-mall/imgs/loading-svg/loading-bars.svg'
+    loading: '/imgs/loading-svg/loading-bars.svg'
 });
 
 Vue.prototype.$message = Message;

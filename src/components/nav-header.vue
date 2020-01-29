@@ -50,7 +50,7 @@
                                 <li class="product">
                                     <a href="" target="_blank">
                                         <div class="pro-img">
-                                            <img src="../../static/imgs/nav-img/nav-3-1.jpg" alt="">
+                                            <img src="/imgs/nav-img/nav-3-1.jpg" alt="">
                                         </div>
                                         <div class="pro-name">小米壁画电视 65英寸</div>
                                         <div class="pro-price">6999元</div>
@@ -59,7 +59,7 @@
                                 <li class="product">
                                     <a href="" target="_blank">
                                         <div class="pro-img">
-                                            <img src="../../static/imgs/nav-img/nav-3-2.jpg" alt="">
+                                            <img src="/imgs/nav-img/nav-3-2.jpg" alt="">
                                         </div>
                                         <div class="pro-name">小米全面屏电视E55A</div>
                                         <div class="pro-price">1999元</div>
@@ -68,7 +68,7 @@
                                 <li class="product">
                                     <a href="" target="_blank">
                                         <div class="pro-img">
-                                            <img src="../../static/imgs/nav-img/nav-3-3.png" alt="">
+                                            <img src="/imgs/nav-img/nav-3-3.png" alt="">
                                         </div>
                                         <div class="pro-name">小米电视4A 32英寸</div>
                                         <div class="pro-price">699元</div>
@@ -77,7 +77,7 @@
                                 <li class="product">
                                     <a href="" target="_blank">
                                         <div class="pro-img">
-                                            <img src="../../static/imgs/nav-img/nav-3-4.jpg" alt="">
+                                            <img src="/imgs/nav-img/nav-3-4.jpg" alt="">
                                         </div>
                                         <div class="pro-name">小米电视4A 55英寸</div>
                                         <div class="pro-price">1799元</div>
@@ -86,7 +86,7 @@
                                 <li class="product">
                                     <a href="" target="_blank">
                                         <div class="pro-img">
-                                            <img src="../../static/imgs/nav-img/nav-3-5.jpg" alt="">
+                                            <img src="/imgs/nav-img/nav-3-5.jpg" alt="">
                                         </div>
                                         <div class="pro-name">小米电视4A 65英寸</div>
                                         <div class="pro-price">2699元</div>
@@ -95,7 +95,7 @@
                                 <li class="product">
                                     <a href="" target="_blank">
                                         <div class="pro-img">
-                                            <img src="../../static/imgs/nav-img/nav-3-6.png" alt="">
+                                            <img src="/imgs/nav-img/nav-3-6.png" alt="">
                                         </div>
                                         <div class="pro-name">查看全部</div>
                                         <div class="pro-price">查看全部</div>
@@ -207,7 +207,7 @@
                     margin-right: 0;
 
                     .icon-cart {
-                        @include bgImg(16px, 12px, '../../static/imgs/icon-cart-checked.png');
+                        @include bgImg(16px, 12px, '/imgs/icon-cart-checked.png');
                         margin-right: 4px;
                     }
                 }
@@ -331,7 +331,7 @@
                         }
 
                         a {
-                            @include bgImg(18px, 18px, '../../static/imgs/icon-search.png');
+                            @include bgImg(18px, 18px, '/imgs/icon-search.png');
                             margin-left: 17px;
                         }
                     }

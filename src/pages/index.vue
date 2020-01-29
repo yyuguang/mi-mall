@@ -10,7 +10,7 @@
                                 <ul v-for="(item,i) in menuList" v-bind:key="i">
                                     <li v-for="(sub,j) in item" v-bind:key="j">
                                         <a v-bind:href="sub?'/#/product/'+sub.id:''">
-                                            <img v-bind:src="sub?sub.img:'http://www.lnzz.site/mi-mall/imgs/item-box-1.png'"
+                                            <img v-bind:src="sub?sub.img:'/imgs/item-box-1.png'"
                                                  alt="">
                                             {{sub?sub.name:'小米9'}}
                                         </a>
@@ -53,7 +53,7 @@
             </div>
             <div class="banner">
                 <a href="/#/product/30">
-                    <img v-lazy="'http://www.lnzz.site/mi-mall/imgs/banner-1.png'" alt="">
+                    <img v-lazy="'/imgs/banner-1.png'" alt="">
                 </a>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <h2>手机</h2>
                 <div class="wrapper">
                     <div class="banner-left">
-                        <a href="/#/product/35"><img src="http://www.lnzz.site/mi-mall/imgs/mix-alpha.jpg" alt=""></a>
+                        <a href="/#/product/35"><img src="/imgs/mix-alpha.jpg" alt=""></a>
                     </div>
                     <div class="list-box">
                         <div class="list" v-for="(arr,i) in phoneList" v-bind:key="i">
@@ -134,42 +134,42 @@
                 slideList: [
                     {
                         id: '42',
-                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-1.jpg'
+                        img: '/imgs/slider/slide-1.jpg'
                     },
                     {
                         id: '45',
-                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-2.jpg'
+                        img: '/imgs/slider/slide-2.jpg'
                     },
                     {
                         id: '46',
-                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-3.jpg'
+                        img: '/imgs/slider/slide-3.jpg'
                     },
                     {
                         id: '',
-                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-4.jpg'
+                        img: '/imgs/slider/slide-4.jpg'
                     },
                     {
                         id: '',
-                        img: 'http://www.lnzz.site/mi-mall/imgs/slider/slide-1.jpg'
+                        img: '/imgs/slider/slide-1.jpg'
                     }
                 ],
                 menuList: [
                     [
                         {
                             id: 30,
-                            img: 'http://www.lnzz.site/mi-mall/imgs/item-box-1.png',
+                            img: '/imgs/item-box-1.png',
                             name: '小米CC9',
                         }, {
                         id: 31,
-                        img: 'http://www.lnzz.site/mi-mall/imgs/item-box-2.png',
+                        img: '/imgs/item-box-2.png',
                         name: '小米8青春版',
                     }, {
                         id: 32,
-                        img: 'http://www.lnzz.site/mi-mall/imgs/item-box-3.jpg',
+                        img: '/imgs/item-box-3.jpg',
                         name: 'Redmi K20 Pro',
                     }, {
                         id: 33,
-                        img: 'http://www.lnzz.site/mi-mall/imgs/item-box-4.jpg',
+                        img: '/imgs/item-box-4.jpg',
                         name: '移动4G专区',
                     }
                     ],
@@ -243,7 +243,7 @@
                                 right: 30px;
                                 top: 17.5px;
                                 content: ' ';
-                                @include bgImg(10px, 15px, 'http://www.lnzz.site/mi-mall/imgs/icon-arrow.png');
+                                @include bgImg(10px, 15px, '/imgs/icon-arrow.png');
                             }
                         }
 
@@ -397,7 +397,7 @@
                                     cursor: pointer;
 
                                     &:after {
-                                        @include bgImg(22px, 22px, 'http://www.lnzz.site/mi-mall/imgs/icon-cart-hover.png');
+                                        @include bgImg(22px, 22px, '/imgs/icon-cart-hover.png');
                                         content: ' ';
                                         margin-left: 5px;
                                         vertical-align: middle;

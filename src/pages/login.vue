@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <div class="container">
-            <a href="/#/index"><img src="../../static/imgs/login-logo.png" alt=""></a>
+            <a href="/#/index"><img src="/imgs/login-logo.png" alt=""></a>
         </div>
         <div class="wrapper">
             <div class="container">
@@ -81,7 +81,7 @@
         }
 
         .wrapper {
-            background: url('../../static/imgs/login-bg.jpg') no-repeat center;
+            background: url('/imgs/login-bg.jpg') no-repeat center;
 
             .container {
                 height: 576px;

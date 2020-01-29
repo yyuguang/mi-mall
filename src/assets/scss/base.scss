@@ -51,13 +51,13 @@ input {
 
     &:before {
       content: ' ';
-      @include bgImg(55px, 55px, '../../static/imgs/mi-logo.png', 55px);
+      @include bgImg(55px, 55px, '/imgs/mi-logo.png', 55px);
       transition: margin .2s;
     }
 
     &:after {
       content: ' ';
-      @include bgImg(55px, 55px, '../../static/imgs/mi-home.png', 55px);
+      @include bgImg(55px, 55px, '/imgs/mi-home.png', 55px);
     }
 
     &:hover:before {
