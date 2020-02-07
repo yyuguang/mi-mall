@@ -80,7 +80,7 @@
 
 
 
-![img14](![img13](https://github.com/yyuguang/mi-mall/blob/master/git-mi-mall/order-pay.png))
+![img14](![img13](https://github.com/yyuguang/mi-mall/blob/master/git-mi-mall/order-list.png)
 
 
 
